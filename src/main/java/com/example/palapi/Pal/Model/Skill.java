@@ -1,0 +1,83 @@
+package com.example.palapi.Pal.Model;
+
+import jakarta.persistence.*;
+
+@SuppressWarnings("unused")
+
+@Entity
+public class Skill {
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private int level;
+	private String name;
+	private String type;
+	private int cooldown;
+	private int power;
+	private String description;
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getCooldown() {
+		return cooldown;
+	}
+
+	public void setCooldown(int cooldown) {
+		this.cooldown = cooldown;
+	}
+
+	public int getPower() {
+		return power;
+	}
+
+	public void setPower(int power) {
+		this.power = power;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Skill [id=" + id + ", level=" + level + ", name=" + name + ", type=" + type + ", cooldown=" + cooldown
+				+ ", power=" + power + ", description=" + description + "]";
+	}
+}
