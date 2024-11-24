@@ -1,7 +1,9 @@
 package com.example.palapi.Pal.Model;
 
+import jakarta.persistence.*;
 @SuppressWarnings("unused")
 
+@Embeddable
 public class Attack {
 	private int melee;
 	private int ranged;
