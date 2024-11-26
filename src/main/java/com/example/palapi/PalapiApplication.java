@@ -8,6 +8,7 @@ public class PalapiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(PalapiApplication.class, args);
+        System.out.println("Hello, Palapi!");
     }
 
 }
