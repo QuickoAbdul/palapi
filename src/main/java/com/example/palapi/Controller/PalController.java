@@ -20,7 +20,7 @@ import com.example.palapi.Entity.Pal.Skill;
 import com.example.palapi.Service.PalService;
 
 @RestController
-@RequestMapping("/api/pals")
+@RequestMapping("/api/v1/pals")
 public class PalController {
 
 	private final PalService palService;
