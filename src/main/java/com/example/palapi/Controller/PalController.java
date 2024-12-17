@@ -1,6 +1,5 @@
 package com.example.palapi.Controller;
 
-
 import java.util.List;
 import java.util.Optional;
 import org.springframework.http.HttpStatus;
@@ -23,13 +22,13 @@ import com.example.palapi.Service.PalService;
 @RequestMapping("/api/v1/pals")
 public class PalController {
 
-	private final PalService palService;
-	
-	public PalController(PalService palService) {
-		this.palService = palService;
-	}
+    private final PalService palService;
 
-	@GetMapping
+    public PalController(PalService palService) {
+        this.palService = palService;
+    }
+
+    @GetMapping
     public ResponseEntity<List<Pal>> getAllPals() {
         List<Pal> pals = palService.getAllPals();
         return ResponseEntity.ok(pals);
@@ -63,42 +62,52 @@ public class PalController {
     public ResponseEntity<List<Skill>> getSkillsForPal(@PathVariable Long id) {
         Optional<Pal> pal = palService.getPalById(id);
         return pal.map(p -> ResponseEntity.ok(p.getSkills()))
-                   .orElse(ResponseEntity.notFound().build());
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping("/{id}/skills")
     public ResponseEntity<Pal> addSkillToPal(@PathVariable Long id, @RequestBody Skill skill) {
         Optional<Pal> pal = palService.getPalById(id);
         return pal.map(p -> ResponseEntity.ok(palService.addSkillToPal(p, skill)))
-                   .orElse(ResponseEntity.notFound().build());
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}/skills")
     public ResponseEntity<Pal> updateSkillForPal(@PathVariable Long id, @RequestBody Skill updatedSkill) {
         Optional<Pal> pal = palService.getPalById(id);
         return pal.map(p -> ResponseEntity.ok(palService.updateSkillForPal(p, updatedSkill)))
-                   .orElse(ResponseEntity.notFound().build());
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/{id}/types")
     public ResponseEntity<List<String>> getTypesForPal(@PathVariable Long id) {
         Optional<Pal> pal = palService.getPalById(id);
         return pal.map(p -> ResponseEntity.ok(p.getTypes()))
-                   .orElse(ResponseEntity.notFound().build());
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping("/{id}/types/{type}")
     public ResponseEntity<Pal> addTypeToPal(@PathVariable Long id, @PathVariable String type) {
         Optional<Pal> pal = palService.getPalById(id);
         return pal.map(p -> ResponseEntity.ok(palService.addTypeToPal(p, type)))
-                   .orElse(ResponseEntity.notFound().build());
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}/types/{type}")
     public ResponseEntity<Pal> removeTypeFromPal(@PathVariable Long id, @PathVariable String type) {
         Optional<Pal> pal = palService.getPalById(id);
         return pal.map(p -> ResponseEntity.ok(palService.removeTypeFromPal(p, type)))
-                   .orElse(ResponseEntity.notFound().build());
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePalById(@PathVariable Long id) {
+        Optional<Pal> pal = palService.getPalById(id);
+        if (pal.isPresent()) {
+            palService.deletePal(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 
     @GetMapping("/sorted/rarity")

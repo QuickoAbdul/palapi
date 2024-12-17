@@ -14,12 +14,12 @@ public class PalService {
     public PalService(PalRepository palRepository) {
         this.palRepository = palRepository;
     }
-    
+
     // GET ALL Pals
     public List<Pal> getAllPals() {
         return palRepository.findAll();
     }
-    
+
     // GET by id
     public Optional<Pal> getPalById(Long id) {
         return palRepository.findById(id);
@@ -76,6 +76,11 @@ public class PalService {
     public Pal removeTypeFromPal(Pal pal, String type) {
         pal.getTypes().remove(type);
         return palRepository.save(pal);
+    }
+
+    // REMOVE a PAL by id
+    public void deletePal(Long id) {
+        palRepository.deleteById(id);
     }
 
     // GET x Pals sorted by rarity
