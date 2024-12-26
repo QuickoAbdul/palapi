@@ -1,7 +1,6 @@
 # Pal API
 
-![Pal API](http://localhost:8080/images/pal-api-logo.png "Pal API SWAGGER UI")
-
+![Pal API](https://github.com/QuickoAbdul/palapi/blob/pal-default/src/main/resources/static/images/swagger-ui.png)
 ## Description
 
 **Pal API** est une application Spring Boot développée pour gérer une collection de "Pals" et leurs attributs associés. Ce projet met en pratique l'utilisation de Spring Boot, Spring JPA, et les principes REST pour construire une API robuste et évolutive.
