@@ -42,11 +42,6 @@ Le projet suit les bonnes pratiques de conception et implémente :
 - **Service** : Contient la logique métier.
 - **Repository** : Gère les interactions avec la base de données via JPA.
 
-### 2. **Clean Architecture (Application / Domain / Infrastructure)**
-- **Application Layer** : Contient les services et points d'entrée (Controllers).
-- **Domain Layer** : Décrit les entités et la logique métier.
-- **Infrastructure Layer** : Fournit l'accès à la base de données et autres systèmes externes.
-
 ---
 
 ## Configuration
@@ -124,7 +119,7 @@ Les contributions sont les bienvenues !
 1. Forkez le projet.
 2. Créez une branche pour votre fonctionnalité/correctif :
    ```bash
-   git checkout -b feature/nouvelle-fonctionnalite
+   git checkout -b nouvelle-fonctionnalite
    ```
 3. Committez vos changements :
    ```bash
@@ -132,6 +127,6 @@ Les contributions sont les bienvenues !
    ```
 4. Poussez votre branche :
    ```bash
-   git push origin feature/nouvelle-fonctionnalite
+   git push -u origin nouvelle-fonctionnalite
    ```
 5. Ouvrez une Pull Request.
