@@ -54,7 +54,7 @@ Le projet suit les bonnes pratiques de conception et implémente :
 ### Installation
 1. Clonez le dépôt :
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/QuickoAbdul/palapi.git
    ```
 2. Accédez au répertoire du projet :
    ```bash
@@ -81,7 +81,7 @@ Le projet suit les bonnes pratiques de conception et implémente :
 
 ### Accéder à la Console H2
 - URL : [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
-- JDBC URL : `jdbc:h2:mem:testdb`
+- JDBC URL : `jdbc:h2:mem:pal`
 - User : `sa`
 - Password : `password`
 
