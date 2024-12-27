@@ -119,7 +119,7 @@ Les contributions sont les bienvenues !
 1. Forkez le projet.
 2. Créez une branche pour votre fonctionnalité/correctif :
    ```bash
-   git checkout -b nouvelle-fonctionnalite
+   git checkout -b <new-branch>
    ```
 3. Committez vos changements :
    ```bash
@@ -127,6 +127,6 @@ Les contributions sont les bienvenues !
    ```
 4. Poussez votre branche :
    ```bash
-   git push -u origin nouvelle-fonctionnalite
+   git push -u origin <new-branch>
    ```
 5. Ouvrez une Pull Request.
